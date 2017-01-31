@@ -1,9 +1,5 @@
-class appserv_tomcat::service (
-    $service_name = $appserv_tomcat::params::package_name,
-    $service_message = $appserv_tomcat::params::service_message
-    ) inherits appserv_tomcat::params {
+class appserv_tomcat::service ($service_name = 'httpd' {
     
-
 # This resource enables the tomcat service
 
      service { $service_name:
@@ -13,4 +9,6 @@ class appserv_tomcat::service (
         hasstatus  => true,
         # pattern    => $package_name,
     }
+    $service_message=hiera('appserv_tomcat::service_message')
+notify{$service_message:}
 }
