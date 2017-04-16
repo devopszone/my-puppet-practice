@@ -43,6 +43,6 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class openmrs {
-include openmrs::java
+include openmrs::java_install
 
 }

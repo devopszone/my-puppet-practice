@@ -1,7 +1,7 @@
 # Class: java
 #
 #
-class openmrs::java {
+class openmrs::java_install{
     # resources
       java::oracle { 'jdk8' :
       ensure  => 'present',
